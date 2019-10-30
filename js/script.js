@@ -33,13 +33,19 @@ var quotes = [
   }
 ];
 
+// Created a variable to store the count of objects in the quotes array. 
+
 var quotesLength = quotes.length;
 
+
+// Created a function that returns a random number. I wrapped Math.floor with the quotesLength variable multipled with Math.Random to create a count that would be equal to the amount of objects in the quote array.
 
 function getRandomQuote(){
   var randomNumber = Math.floor(Math.random() * quotesLength);
   return quotes[randomNumber];
 }
+
+// The printQuote function store the getRandomQuote function in a variable, this is used to call a random object from the quotes array. The var theHTML is concatenated in order to add if statements if key and value are not available in the object.
 
 function printQuote(){
   var randomQuote = getRandomQuote();
@@ -57,7 +63,10 @@ function printQuote(){
   document.getElementById('quote-box').innerHTML = theHTML;
 }
 
+// Initiates the printQuote function
+
 printQuote();
 
+// Finds element, adds an event listener for click, triggers the printQuote function.
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
